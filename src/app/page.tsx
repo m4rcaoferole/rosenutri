@@ -1,5 +1,10 @@
 function Home() {
-  return <h1>Página em Construção</h1>;
+  return (
+    <div className="">
+      <h1></h1>
+
+    </div>
+  )
 }
 
 export default Home;

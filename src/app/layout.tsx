@@ -1,6 +1,6 @@
 import { Inter } from 'next/font/google'
 import './global.css'
-import Sidebar from '../../components'
+import Sidebar from '../components/Sidebar'
 
 const inter = Inter({ subsets: ['latin']})
 
@@ -11,12 +11,12 @@ export const metadata = {
 
 export default function RootLayout({ children }: Readonly<{children: React.ReactNode}>) {
   return (
-    <html lang="pt-br">
+    <html lang="pt-br" className='antialiased'>
       <body className={inter.className}>
-        <div className='min-h-screen bg-black'>
+        <div className='min-h-screen'>
           <Sidebar />
 
-          <main className='text-center text-white'>{children}</main>
+          <main>{children}</main>
         </div>
       </body>
     </html>
