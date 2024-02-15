@@ -1,13 +1,16 @@
+import Link from "next/link"
+
 export interface NavItemProps {
   title: string
+  href: string
 }
 
-export function NavItem({ title }: NavItemProps) {
+export function NavItem({ title, href }: NavItemProps) {
   return (
-    <a href='#' className="px-2 hover:bg-violet-100">
-      <span className="font-medium hover:text-violet-500">
+    <Link href={href} className="px-6">
+      <span className="text-midori200 font-semibold hover:text-murasaki300">
         {title}
       </span>
-    </a>
+    </Link>
   )
 }
