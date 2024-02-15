@@ -1,6 +1,5 @@
 import { Inter } from 'next/font/google'
 import './global.css'
-import Sidebar from '../components/Sidebar'
 
 const inter = Inter({ subsets: ['latin']})
 
@@ -13,9 +12,7 @@ export default function RootLayout({ children }: Readonly<{children: React.React
   return (
     <html lang="pt-br" className='antialiased'>
       <body className={inter.className}>
-        <div className='min-h-screen'>
-          <Sidebar />
-
+        <div className='bg-[#f2f0e4]'>
           <main>{children}</main>
         </div>
       </body>
