@@ -2,9 +2,9 @@ import Sidebar from '@/components/Sidebar';
 import Services from '@/components/Missions';
 import NutriSection from '@/components/NutriSection';
 import AboutNutri from '@/components/AboutNutri';
-import ConsultOnline from '@/components/ConsultOnline';
-import Instagram from '@/components/Instagram';
+import Consultation from '@/components/Consultation';
 import Contact from '@/components/Contact';
+import Testimonials from '@/components/Testimonials';
 
 export default function Home() {
   return (
@@ -12,15 +12,15 @@ export default function Home() {
       <Sidebar />
 
       <div className=''>
-        <NutriSection />      
+        <NutriSection />
 
         <Services />
 
         <AboutNutri />
 
-        <ConsultOnline />
+        <Testimonials />
 
-        <Instagram />
+        <Consultation />
 
         <Contact />
       </div>

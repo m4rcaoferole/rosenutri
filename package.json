@@ -8,6 +8,7 @@
   "author": "Marcos Ferole",
   "license": "MIT",
   "dependencies": {
+    "@heroicons/react": "^2.2.0",
     "@phosphor-icons/react": "^2.0.15",
     "next": "^14.1.0",
     "react": "^18",

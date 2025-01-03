@@ -12,7 +12,7 @@ export default function RootLayout({ children }: Readonly<{children: React.React
   return (
     <html lang="pt-br" className='antialiased'>
       <body className={inter.className}>
-        <div className='bg-[#f2f0e4]'>
+        <div className='bg-[#fff]'>
           <main>{children}</main>
         </div>
       </body>
