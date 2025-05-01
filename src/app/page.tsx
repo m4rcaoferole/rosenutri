@@ -1,17 +1,17 @@
-import Sidebar from '@/components/Sidebar';
-import Services from '@/components/Missions';
-import NutriSection from '@/components/NutriSection';
 import AboutNutri from '@/components/AboutNutri';
 import Consultation from '@/components/Consultation';
 import Contact from '@/components/Contact';
+import Header from '@/components/Header';
+import Services from '@/components/Missions';
+import NutriSection from '@/components/NutriSection';
 import Testimonials from '@/components/Testimonials';
 
 export default function Home() {
   return (
-    <div className='flex min-h-screen flex-col'>
-      <Sidebar />
+    <div className="flex min-h-screen flex-col">
+      <Header />
 
-      <div className=''>
+      <div className="bg-white">
         <NutriSection />
 
         <Services />
@@ -24,7 +24,6 @@ export default function Home() {
 
         <Contact />
       </div>
-
     </div>
   );
 }
