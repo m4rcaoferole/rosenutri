@@ -26,5 +26,5 @@ module.exports = {
       error: '#ef4444', // Erros e validações (vermelho)
     },
   },
-  plugins: [],
+  plugins: [require('tailwindcss-animate')],
 };
