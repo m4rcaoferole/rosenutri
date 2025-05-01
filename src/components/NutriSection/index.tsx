@@ -8,7 +8,9 @@ import nutriPhoto from '../../assets/nutriPhoto.png';
 
 export default function NutriSection() {
   return (
-    <section className="bg-gradient-to-r from-white via-white to-murasaki100/50 px-6 pt-8 md:pt-6 sm:pt-12">
+    // <section className="bg-gradient-to-r from-white via-white to-murasaki100/50 px-6 pt-8 md:pt-6 sm:pt-12">
+    // <section className="bg-gradient-to-tr from-white via-white to-murasaki100/50 px-6 pt-8 md:pt-6 sm:pt-12">
+    <section className="bg-gradient-to-tr from-murasaki100/30 via-white/80 to-murasaki100/90 px-6 pt-8 md:pt-6 sm:pt-12">
       <div className="max-w-4xl mx-auto flex items-center">
         {/* Texto e Botão */}
         <div className="text-center flex flex-col gap-3 md:pr-10 md:text-left space-x-6">
