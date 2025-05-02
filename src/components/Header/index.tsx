@@ -21,14 +21,14 @@ function Header() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="bg-white w-full shadow z-50 relative">
+    <header className="bg-white w-full shadow z-50">
       {/* <div className="container max-w-none flex items-center px-4 md:justify-between md:shadow-lg md:shadow-murasaki100/20"> */}
       <div className="max-w-6xl px-8 py-2 mx-auto flex justify-between items-center">
         <div className="hidden md:block">
           <Image src={logoRose} alt="Logo da Nutri" width={150} height={150} />
         </div>
 
-        <div className="md:hidden px-8 flex items-center w-full relative">
+        <div className="md:hidden px-8 flex justify-center items-center w-full">
           <div className="md:hidden ">
             <Image src={logoRose} alt="Logo da Circuclo Nutri" width={130} height={130} />
           </div>
@@ -58,7 +58,7 @@ function Header() {
 
       {/* Menu Mobile */}
       {isOpen && (
-        <div className="absolute w-full bg-white shadow-lg rounded p-6 z-50">
+        <div className="absolute w-full bg-white shadow-lg rounded-b-lg p-6 z-50">
           <nav className="flex items-center flex-col gap-4">
             {NAV_LINKS.map((mobile) => (
               <a

@@ -8,14 +8,12 @@ import nutriPhoto from '../../assets/nutriPhoto.png';
 
 export default function NutriSection() {
   return (
-    // <section className="bg-gradient-to-r from-white via-white to-murasaki100/50 px-6 pt-8 md:pt-6 sm:pt-12">
-    // <section className="bg-gradient-to-tr from-white via-white to-murasaki100/50 px-6 pt-8 md:pt-6 sm:pt-12">
-    <section className="bg-gradient-to-tr from-murasaki100/30 via-white/80 to-murasaki100/90 px-6 pt-8 md:pt-6 sm:pt-12">
+    <section className="bg-gradient-to-tr from-murasaki100/30 border-t-4 border-t-murasaki100 via-white/80 to-murasaki100/90 px-6 pt-8 md:pt-6 sm:pt-12">
       <div className="max-w-4xl mx-auto flex items-center">
         {/* Texto e Botão */}
         <div className="text-center flex flex-col gap-3 md:pr-10 md:text-left space-x-6">
-          <div className="flex items-center gap-6">
-            <Image src={logoCircleRose} alt="Logo da Nutri" width={150} height={150} />
+          <div className="flex justify-evenly items-center gap-6">
+            <Image src={logoCircleRose} alt="Logo da Nutri" width={100} height={100} />
             <h1 className="text-2xl font-bold text-gray-900 sm:text-3xl">
               Acompanhamento{' '}
               <span className="text-murasaki300">
@@ -25,7 +23,7 @@ export default function NutriSection() {
             </h1>
           </div>
 
-          <h2 className="text-sm md:text-right font-semibold text-midori300 sm:text-base">
+          <h2 className="text-xs md:text-right font-semibold text-midori300 sm:text-sm">
             Cada mulher é única e sua alimentação também precisa ser.
           </h2>
 
