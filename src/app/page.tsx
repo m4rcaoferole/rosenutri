@@ -21,9 +21,9 @@ export default function Home() {
 
         <AboutNutri />
 
-        <Testimonials />
-
         <Consultation />
+
+        <Testimonials />
 
         <Contact />
       </div>
