@@ -2,7 +2,7 @@ import { WhatsappLogo } from '@phosphor-icons/react';
 
 export default function Consultation() {
   return (
-    <section id="consultation" className="bg-white py-10">
+    <section id="consult" className="bg-white py-10">
       <div className="container mx-auto px-6 text-center">
         <h2 className="text-3xl font-bold text-murasaki200 mb-8">
           Vamos começar sua transformação?
