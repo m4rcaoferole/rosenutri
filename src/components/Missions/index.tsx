@@ -1,5 +1,3 @@
-'use client';
-
 import { NotePencil, Stethoscope, VideoCamera } from '@phosphor-icons/react';
 
 export default function Services() {
