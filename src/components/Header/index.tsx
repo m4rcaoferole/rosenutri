@@ -8,7 +8,7 @@ import logoRose from '../../assets/logo-rose-original.png';
 const NAV_LINKS = [
   { href: '#services', label: 'Serviços Nutricionais' },
   { href: '#about', label: 'Sobre a Nutri' },
-  { href: '#consult', label: 'Consulta Online' },
+  { href: '#consultation', label: 'Consulta Online' },
   {
     href: 'https://www.instagram.com/roseazumanutri',
     label: 'Instagram',

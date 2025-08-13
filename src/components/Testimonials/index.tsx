@@ -6,7 +6,7 @@ export default function Testimonials() {
   const testimonials = [
     {
       name: "Maria Silva",
-      feedback: "A [Nome da Nutricionista] transformou minha relação com a comida. Hoje me sinto mais saudável e feliz!",
+      feedback: "A Rosemary Azuma transformou minha relação com a comida. Hoje me sinto mais saudável e feliz!",
       rating: 5,
     },
     {

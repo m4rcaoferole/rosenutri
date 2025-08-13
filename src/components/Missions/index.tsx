@@ -5,7 +5,7 @@ export default function Services() {
     {
       title: 'Planejamento Alimentar',
       descriptions: [
-        'CPlano alimentar 100% personalizado (nada de copiar e colar)',
+        'Plano alimentar 100% personalizado (nada de copiar e colar)',
         'Sugestões de substituições inteligentes e receitas simples',
         'Orientações práticas para lidar com eventos, viagens e rotina corrida',
       ],
@@ -15,8 +15,8 @@ export default function Services() {
       title: 'Consulta Nutricional',
       descriptions: [
         'Avaliação completa da sua rotina alimentar, saúde e objetivos.',
-        'Avaliação completa da sua rotina alimentar, saúde e objetivos.',
-        'Avaliação completa da sua rotina alimentar, saúde e objetivos.',
+        'Recomendações personalizadas para suas necessidades.',
+        'Orientações para hábitos saudáveis e metas sustentáveis.',
       ],
       icon: Stethoscope,
     },

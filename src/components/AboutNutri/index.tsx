@@ -8,7 +8,7 @@ export default function AboutNutri() {
           A nutri por trás do plano
           <br /> que vai transformar seu corpo com leveza.
         </h2>
-        <div className="flex flex-col gap-4 items-center md:flex-row md: md:space-x-8">
+        <div className="flex flex-col gap-4 items-center md:flex-row md:space-x-8">
           <div className="mb-8 md:mb-0">
             <Image
               src="https://plus.unsplash.com/premium_photo-1661396861110-7041a3dff0af?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
@@ -38,7 +38,7 @@ export default function AboutNutri() {
               te levam ao seu objetivo de forma duradoura.
             </p>
             <p className="text-gray700 text-left mb-4 font-medium text-lg italic">
-              Seja muito bem-vinda ao seu novo estilo de vida!"
+              Seja muito bem-vinda ao seu novo estilo de vida!
             </p>
 
             {/* Valores ou Especialidades */}
