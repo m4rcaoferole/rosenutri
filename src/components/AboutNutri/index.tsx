@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 export default function AboutNutri() {
   return (
     <section id="about" className="bg-white py-16">
@@ -8,9 +10,11 @@ export default function AboutNutri() {
         </h2>
         <div className="flex flex-col gap-4 items-center md:flex-row md: md:space-x-8">
           <div className="mb-8 md:mb-0">
-            <img
+            <Image
               src="https://plus.unsplash.com/premium_photo-1661396861110-7041a3dff0af?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
               alt="Nutricionista"
+              width={320}
+              height={320}
               className="w-80 h-80 rounded-full object-cover border-2 border-murasaki200 shadow-lg shadow-murasaki100/40"
             />
           </div>
