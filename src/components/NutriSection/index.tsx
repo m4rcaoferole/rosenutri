@@ -1,5 +1,3 @@
-'use client';
-
 import { WhatsappLogo } from '@phosphor-icons/react';
 import Image from 'next/image';
 
