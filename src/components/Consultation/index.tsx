@@ -34,6 +34,7 @@ export default function Consultation() {
           <a
             href="https://wa.me/819038354891"
             target="_blank"
+            rel="noopener noreferrer"
             className="flex justify-center items-center bg-gradient-to-r from-murasaki300 to-murasaki100 text-white font-bold px-8 py-4 rounded shadow-lg hover:opacity-90 transition"
           >
             <WhatsappLogo size={30} className="inline mr-3" />

@@ -34,6 +34,7 @@ export default function NutriSection() {
             <a
               href="https://wa.me/819038354891"
               target="_blank"
+              rel="noopener noreferrer"
               // className="bg-murasaki300 text-white font-bold px-8 py-4 rounded shadow-lg hover:bg-murasaki100 transition"
               className="bg-gradient-to-r from-murasaki300 to-murasaki100 text-white font-bold px-8 py-4 rounded shadow-lg hover:opacity-90 transition"
             >
