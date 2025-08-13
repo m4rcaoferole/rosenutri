@@ -4,6 +4,8 @@
   "description": "Site da nutricionista Rosemary Azuma",
   "scripts": {
     "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
     "prepare": "husky",
     "commit": "cz"
   },
