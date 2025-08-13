@@ -48,6 +48,7 @@ function Header() {
               key={desktop.href}
               href={desktop.href}
               target={desktop.external ? '_blank' : '_self'}
+              rel={desktop.external ? 'noopener noreferrer' : undefined}
               className="text-base font-semibold text-gray-800 hover hover:text-murasaki200"
             >
               {desktop.label}
@@ -65,6 +66,7 @@ function Header() {
                 key={mobile.href}
                 href={mobile.href}
                 target={mobile.external ? '_blank' : '_self'}
+                rel={mobile.external ? 'noopener noreferrer' : undefined}
                 className="text-lg font-semibold text-gray-800"
                 onClick={() => setIsOpen(false)}
               >
