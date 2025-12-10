@@ -1,36 +1,38 @@
-import { Inter } from 'next/font/google';
-import type { Metadata } from 'next';
-import './global.css';
+import type { Metadata } from "next";
+import { Inter } from "next/font/google";
+import "./global.css";
 
-const inter = Inter({ subsets: ['latin'] });
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: 'Rose Azuma Nutri',
-  description: 'Site da nutricionista Rosemary Azuma',
-  keywords: ['nutrição', 'nutricionista', 'Rosemary Azuma'],
-  authors: [{ name: 'Rosemary Azuma' }],
+  title: "Rose Azuma Nutri",
+  description: "Site da nutricionista Rosemary Azuma",
+  keywords: ["nutrição", "nutricionista", "Rosemary Azuma"],
+  authors: [{ name: "Rosemary Azuma" }],
   alternates: {
-    canonical: '/',
+    canonical: "/",
     languages: {
-      'pt-BR': '/',
+      "pt-BR": "/",
     },
   },
   openGraph: {
-    title: 'Rose Azuma Nutri',
-    description: 'Site da nutricionista Rosemary Azuma',
-    url: 'https://rosenutri.com.br',
-    siteName: 'Rose Azuma Nutri',
-    locale: 'pt_BR',
-    type: 'website',
+    title: "Rose Azuma Nutri",
+    description: "Site da nutricionista Rosemary Azuma",
+    url: "https://roseazumanutri.com.br",
+    siteName: "Rose Azuma Nutri",
+    locale: "pt_BR",
+    type: "website",
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'Rose Azuma Nutri',
-    description: 'Site da nutricionista Rosemary Azuma',
+    card: "summary_large_image",
+    title: "Rose Azuma Nutri",
+    description: "Site da nutricionista Rosemary Azuma",
   },
 };
 
-export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+export default function RootLayout({
+  children,
+}: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="pt-br" className="antialiased">
       <body className={inter.className}>
