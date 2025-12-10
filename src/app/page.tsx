@@ -1,11 +1,11 @@
-import AboutNutri from '@/components/AboutNutri';
-import Consultation from '@/components/Consultation';
-import Contact from '@/components/Contact';
-import Header from '@/components/Header';
-import Services from '@/components/Missions';
-import NutriSection from '@/components/NutriSection';
-import Phrase from '@/components/Phrase';
-import Testimonials from '@/components/Testimonials';
+import AboutNutri from "@/components/AboutNutri";
+import Consultation from "@/components/Consultation";
+import Contact from "@/components/Contact";
+import Header from "@/components/Header";
+import Services from "@/components/Missions";
+import NutriSection from "@/components/NutriSection";
+import Phrase from "@/components/Phrase";
+import Testimonials from "@/components/Testimonials";
 
 export default function Home() {
   return (
