@@ -1,57 +1,151 @@
-import { StarIcon } from "@heroicons/react/24/outline";
+"use client";
+
+import { CaretLeft, CaretRight, Star } from "@phosphor-icons/react";
+import { useState } from "react";
+
+const TESTIMONIALS = [
+  {
+    name: "Paciente do Método Sakura",
+    location: "Japão",
+    feedback:
+      "…tinha vergonha de sair nas fotos, agora voltei a gostar de tirar fotos.",
+    rating: 5,
+    initials: "🌸",
+    bgColor: "bg-murasaki100",
+  },
+  {
+    name: "Paciente do Método Sakura",
+    location: "Japão",
+    feedback:
+      "…Eu nem fiz 100% de tudo que me passou, em 4 semanas perdi 8 kgs, depois perdi mais 2 kgs, já ajustei minhas roupas 3 vezes, para poder continuar usando…e melhor ainda sem passar fome, amei, amei, amei.",
+    rating: 5,
+    initials: "🌸",
+    bgColor: "bg-midori100",
+  },
+  {
+    name: "Paciente do Método Sakura",
+    location: "Japão",
+    feedback:
+      "Minha nutri favorita!! Ela me ajuda quando eu estava realmente precisando. Ela foi muito clara e atenciosa ao explicar cada ponto relacionado à alimentação e aos meus objetivos. As orientações foram personalizadas, baseadas na minha rotina, gostos e restrições.",
+    rating: 5,
+    initials: "🌸",
+    bgColor: "bg-murasaki200",
+  },
+  {
+    name: "Paciente del Método Sakura",
+    location: "Japón",
+    feedback:
+      "…tengo 5 semanas con el tratamiento de nutrición, he logrado bajar 7 kilos. Me está ayudando bastante con la alimentación y sin remedio para adelgazar. Ella siempre está pendiente y preguntando cómo me fue en la semana. Súper recomendada!",
+    rating: 5,
+    initials: "🌸",
+    bgColor: "bg-midori200",
+  },
+];
+
+function StarRating({ rating }: { rating: number }) {
+  return (
+    <div className="mb-4 flex gap-1">
+      {Array.from({ length: 5 }, (_, i) => (
+        <Star
+          key={i}
+          size={20}
+          weight={i < rating ? "fill" : "regular"}
+          className={i < rating ? "text-warning" : "text-gray300"}
+        />
+      ))}
+    </div>
+  );
+}
 
 export default function Testimonials() {
-  const testimonials = [
-    {
-      name: "Maria Silva",
-      feedback:
-        "A Rosemary Azuma transformou minha relação com a comida. Hoje me sinto mais saudável e feliz!",
-      rating: 5,
-    },
-    {
-      name: "João Souza",
-      feedback:
-        "Profissional atenciosa e dedicada. Recomendo para quem busca uma vida mais equilibrada.",
-      rating: 5,
-    },
-    {
-      name: "Ana Pereira",
-      feedback:
-        "Com planos personalizados, consegui alcançar meus objetivos de forma sustentável.",
-      rating: 4,
-    },
-  ];
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const nextTestimonial = () => {
+    setCurrentIndex((prev) => (prev + 1) % TESTIMONIALS.length);
+  };
+
+  const prevTestimonial = () => {
+    setCurrentIndex(
+      (prev) => (prev - 1 + TESTIMONIALS.length) % TESTIMONIALS.length
+    );
+  };
+
+  const currentTestimonial = TESTIMONIALS[currentIndex];
 
   return (
-    <section id="testimonials" className="bg-gray-50 py-16">
-      <div className="container mx-auto px-6 text-center">
-        <h2 className="mb-8 text-3xl font-bold text-purple800">
-          Depoimentos
+    <section id="testimonials" className="bg-gray50 py-16">
+      <div className="container mx-auto max-w-4xl px-6">
+        <h2 className="mb-2 text-center text-3xl font-bold text-murasaki200">
+          O que dizem as pacientes
         </h2>
-        <div className="space-y-8">
-          {testimonials.map((testimonial, index) => (
-            <div key={index} className="rounded-lg bg-white p-6 shadow-lg">
-              {/* Avaliação em estrelas */}
-              <div className="mb-4 flex justify-center">
-                {Array.from({ length: 5 }, (_, i) => (
-                  <StarIcon
-                    key={i}
-                    className={`h-5 w-5 ${
-                      i < testimonial.rating
-                        ? "text-yellow-400"
-                        : "text-gray-300"
-                    }`}
-                  />
-                ))}
+        <p className="mb-10 text-center text-gray500">
+          Histórias reais de transformação e bem-estar
+        </p>
+
+        {/* Carousel Container */}
+        <div className="relative">
+          {/* Main Testimonial Card */}
+          <div className="rounded-2xl bg-white p-8 shadow-lg transition-all duration-300 md:p-10">
+            <div className="flex flex-col items-center text-center md:flex-row md:items-start md:text-left">
+              {/* Avatar */}
+              <div
+                className={`mb-6 flex h-20 w-20 shrink-0 items-center justify-center rounded-full text-2xl font-bold text-white md:mb-0 md:mr-8 ${currentTestimonial.bgColor}`}
+              >
+                {currentTestimonial.initials}
               </div>
-              <p className="text-gray-700 mb-4 italic">
-                "{testimonial.feedback}"
-              </p>
-              <p className="text-green-700 font-semibold">
-                - {testimonial.name}
-              </p>
+
+              {/* Content */}
+              <div className="flex-1">
+                <StarRating rating={currentTestimonial.rating} />
+                <blockquote className="mb-6 text-lg leading-relaxed text-gray700 italic">
+                  &ldquo;{currentTestimonial.feedback}&rdquo;
+                </blockquote>
+                <div>
+                  <p className="font-semibold text-murasaki300">
+                    {currentTestimonial.name}
+                  </p>
+                  <p className="text-sm text-gray500">
+                    {currentTestimonial.location}
+                  </p>
+                </div>
+              </div>
             </div>
-          ))}
+          </div>
+
+          {/* Navigation Buttons */}
+          <div className="mt-6 flex items-center justify-center gap-4">
+            <button
+              onClick={prevTestimonial}
+              className="flex h-12 w-12 items-center justify-center rounded-full bg-white shadow-md transition-all hover:bg-murasaki100 hover:text-white"
+              aria-label="Depoimento anterior"
+            >
+              <CaretLeft size={24} />
+            </button>
+
+            {/* Dots */}
+            <div className="flex gap-2">
+              {TESTIMONIALS.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => setCurrentIndex(index)}
+                  className={`h-3 w-3 rounded-full transition-all ${
+                    index === currentIndex
+                      ? "w-6 bg-murasaki200"
+                      : "bg-gray300 hover:bg-murasaki100"
+                  }`}
+                  aria-label={`Ir para depoimento ${index + 1}`}
+                />
+              ))}
+            </div>
+
+            <button
+              onClick={nextTestimonial}
+              className="flex h-12 w-12 items-center justify-center rounded-full bg-white shadow-md transition-all hover:bg-murasaki100 hover:text-white"
+              aria-label="Próximo depoimento"
+            >
+              <CaretRight size={24} />
+            </button>
+          </div>
         </div>
       </div>
     </section>
