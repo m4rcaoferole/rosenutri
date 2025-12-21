@@ -4,66 +4,92 @@ import { WhatsappLogo } from "@phosphor-icons/react";
 import Image from "next/image";
 
 import logoCircleRose from "../../assets/logo-rose-circular-original.png";
-import nutriPhoto from "../../assets/nutriPhoto.png";
+import nutriPhoto from "../../assets/nutri_1.png";
 
 export default function NutriSection() {
   return (
-    <section className="border-t-4 border-t-purple700 bg-gradient-to-tr from-purple700/30 via-white/80 to-purple700/90 px-6 pt-8 sm:pt-12 md:pt-10">
-      <div className="mx-auto flex max-w-4xl">
-        {/* Texto e Botão */}
-        <div className="flex flex-col gap-2 space-x-4 text-ellipsis md:pr-10 md:text-left">
-          <div className="flex items-center gap-4 md:justify-evenly">
-            <Image
-              src={logoCircleRose}
-              alt="Logo da Nutri"
-              width={100}
-              height={100}
-            />
-            <h1 className="text-gray-900 text-center text-2xl font-bold sm:text-3xl">
-              Acompanhamento{" "}
-              <span className="text-purple900">Nutricional</span>
-              <br /> 100% Online e
-              <span className="text-purple900"> Personalizado</span>
-            </h1>
-          </div>
+    <section className="relative min-h-screen overflow-hidden">
+      {/* Background Image */}
+      <div className="absolute inset-0">
+        <Image
+          src={nutriPhoto}
+          alt="Nutricionista Rosemary Azuma"
+          fill
+          className="object-cover object-[center_30%] lg:object-[65%_30%]"
+          priority
+          sizes="100vw"
+        />
+        {/* Gradient Overlay - mais claro */}
+        <div className="absolute inset-0 bg-gradient-to-r from-murasaki100/65 via-murasaki100/35 to-transparent" />
+      </div>
 
-          <h2 className="text-[10px] font-bold text-green900 sm:text-sm md:text-center">
-            Cada mulher é única ー e sua alimentação também precisa ser.
-          </h2>
-          <p className="text-gray-700 text-sm sm:text-lg">
-            No meu atendimento online, você recebe um plano alimentar adaptado à
-            sua rotina, objetivos e gostos, sem restrições desnecessárias e com
-            foco em resultados reais e duradouros.
-          </p>
-          <p className="text-gray-700 text-sm sm:text-lg">
-            Seja no Japão, no Brasil ou onde você estiver, o meu acompanhamento
-            vai além da dieta:
-          </p>
-          <p className="text-gray-700 text-sm sm:text-lg">
-            É uma parceria com foco em leveza, estratégia e mudança de verdade.
-          </p>
-          <div className="flex flex-1 items-center justify-center">
+      {/* Main Content */}
+      <div className="relative z-10 flex min-h-[75vh] items-center pt-20">
+        <div className="mx-auto max-w-6xl px-6 py-12 lg:py-16">
+          <div className="max-w-2xl">
+            {/* Logo + Badge side by side */}
+            <div className="mb-8 flex flex-wrap items-center gap-4">
+              <Image
+                src={logoCircleRose}
+                alt="Logo Rose Nutri"
+                width={80}
+                height={80}
+                className="brightness-0 invert"
+              />
+              <div className="inline-flex items-center gap-2 rounded-full bg-white/25 px-4 py-2 backdrop-blur-sm">
+                <span className="h-2 w-2 animate-pulse rounded-full bg-shiro200" />
+                <span className="text-sm font-medium text-white">
+                  17 anos de experiência • 100% Online
+                </span>
+              </div>
+            </div>
+
+            {/* Title */}
+            <h1 className="mb-6 text-4xl font-bold leading-tight text-white sm:text-5xl lg:text-6xl">
+              Acompanhamento
+              <br />
+              <span className="text-shiro200">Nutricional</span>
+              <br />
+              <span className="text-white/90">Personalizado</span>
+            </h1>
+
+            {/* Subtitle */}
+            <p className="mb-4 text-xl font-semibold text-shiro200">
+              Cada mulher é única ー e sua alimentação também precisa ser.
+            </p>
+
+            {/* Description */}
+            <p className="mb-8 max-w-lg text-lg leading-relaxed text-white/90">
+              Receba um plano alimentar adaptado à sua rotina, objetivos e
+              gostos. Seja no Japão, no Brasil ou onde você estiver — uma
+              parceria com foco em leveza, estratégia e mudança de verdade.
+            </p>
+
+            {/* CTA */}
             <a
-              href="https://wa.me/819038354891"
+              href="https://wa.me/819038354891?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20o%20acompanhamento%20nutricional."
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-4 flex items-center rounded bg-gradient-to-r from-purple900 to-purple700 px-8 py-4 font-bold text-white shadow-lg transition hover:opacity-90"
+              className="group inline-flex items-center gap-3 rounded-full bg-white px-8 py-4 text-lg font-bold text-murasaki300 shadow-xl transition-all hover:scale-105 hover:bg-shiro200"
             >
-              <WhatsappLogo size={28} className="mr-2 inline" />
-              Agendar pelo WhatsApp
+              <WhatsappLogo size={28} weight="fill" className="text-midori100" />
+              Agendar Consulta
             </a>
           </div>
         </div>
+      </div>
 
-        {/* Foto da Nutricionista */}
-        <div className="animate-fadeIn hidden md:block">
-          <Image
-            src={nutriPhoto}
-            alt="Foto da Nutricionista Rosemary Azuma"
-            width={500}
-            height={500}
-            className="object-cover"
-          />
+      {/* Quote Section - integrada no mesmo background */}
+      <div className="relative z-10 pb-16">
+        <div className="mx-auto max-w-4xl px-6">
+          <div className="rounded-2xl border-l-4 border-shiro200 bg-white/15 py-6 pl-6 pr-8 backdrop-blur-sm">
+            <p className="text-lg font-medium text-white italic sm:text-xl">
+              "Você não precisa sofrer para emagrecer. Só precisa de um plano
+              que funcione na sua vida real — e alguém do seu lado pra te guiar
+              com acolhimento e estratégia."
+            </p>
+            <p className="mt-4 font-semibold text-shiro200">— Rosemary Azuma</p>
+          </div>
         </div>
       </div>
     </section>
