@@ -6,10 +6,10 @@ export default function Consultation() {
   return (
     <section id="consultation" className="bg-white py-10">
       <div className="container mx-auto px-6 text-center">
-        <h2 className="mb-8 text-3xl font-bold text-purple800">
+        <h2 className="mb-8 text-3xl font-bold text-murasaki200">
           Vamos começar sua transformação?
         </h2>
-        <h3 className="mb-8 font-semibold text-purple800">
+        <h3 className="mb-8 font-semibold text-murasaki200">
           Escolha o melhor horário e inicie um plano alimentar feito
           especialmente para você <br />— com leveza, estratégia e resultados
           reais.
@@ -50,7 +50,7 @@ export default function Consultation() {
             href="https://wa.me/819038354891"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center justify-center rounded bg-gradient-to-r from-purple900 to-purple700 px-8 py-4 font-bold text-white shadow-lg transition hover:opacity-90"
+            className="flex items-center justify-center rounded bg-gradient-to-r from-murasaki300 to-murasaki100 px-8 py-4 font-bold text-white shadow-lg transition hover:opacity-90"
           >
             <WhatsappLogo size={30} className="mr-3 inline" />
             <div>CLIQUE AQUI PARA AGENDAR PELO WHATSAPP</div>
