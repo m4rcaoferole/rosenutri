@@ -3,83 +3,106 @@
 import { List, X } from "@phosphor-icons/react";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+
 import logoRose from "../../assets/logo-rose-original.png";
 
 const NAV_LINKS = [
-  { href: "#services", label: "Serviços Nutricionais" },
-  { href: "#about", label: "Sobre a Nutri" },
-  { href: "#consultation", label: "Consulta Online" },
+  { href: "#services", label: "Serviços" },
+  { href: "#specialties", label: "Áreas" },
+  { href: "#about", label: "Sobre" },
+  { href: "#testimonials", label: "Depoimentos" },
+  { href: "#faq", label: "FAQ" },
+  { href: "#contact", label: "Contato" },
   {
-    href: "https://www.instagram.com/roseazumanutri",
+    href: "https://www.instagram.com/roseazuma.nutri",
     label: "Instagram",
     external: true,
   },
-  { href: "#contact", label: "Contato" },
 ];
 
 function Header() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
-    <header className="z-50 w-full bg-white shadow">
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-8 py-2">
-        <div className="hidden md:block">
-          <Image src={logoRose} alt="Logo da Nutri" width={150} height={150} />
-        </div>
+    <header
+      className={`fixed top-0 z-50 w-full transition-all duration-300 ${
+        isScrolled
+          ? "bg-white/95 shadow-lg backdrop-blur-md"
+          : "bg-transparent"
+      }`}
+    >
+      <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-3">
+        {/* Logo */}
+        <Link href="/" className="shrink-0">
+          <Image
+            src={logoRose}
+            alt="Logo Rose Nutri"
+            width={120}
+            height={120}
+            className={`transition-all duration-300 ${
+              isScrolled ? "" : "brightness-0 invert"
+            }`}
+          />
+        </Link>
 
-        <div className="flex w-full items-center justify-center px-8 md:hidden">
-          <div className="md:hidden">
-            <Image
-              src={logoRose}
-              alt="Logo da Circuclo Nutri"
-              width={130}
-              height={130}
-            />
-          </div>
-          <button
-            onClick={() => setIsOpen(!isOpen)}
-            className="absolute right-8 text-3xl text-purple800 focus:outline-none md:hidden"
-            aria-label="Abrir menu"
-          >
-            {!isOpen ? (
-              <List size={28} className="text-purple800" />
-            ) : (
-              <X size={28} className="text-purple800" />
-            )}
-          </button>
-        </div>
-
-        {/* Links de navegação (Desktop) */}
-        <nav className="hidden gap-4 space-x-6 md:flex">
-          {NAV_LINKS.map((desktop) => (
+        {/* Desktop Navigation */}
+        <nav className="hidden items-center gap-1 lg:flex">
+          {NAV_LINKS.map((link) => (
             <Link
-              key={desktop.href}
-              href={desktop.href}
-              target={desktop.external ? "_blank" : "_self"}
-              rel={desktop.external ? "noopener noreferrer" : undefined}
-              className="text-gray-800 text-base font-semibold transition-colors hover:text-purple800"
+              key={link.href}
+              href={link.href}
+              target={link.external ? "_blank" : "_self"}
+              rel={link.external ? "noopener noreferrer" : undefined}
+              className={`rounded-full px-4 py-2 text-sm font-medium transition-all ${
+                isScrolled
+                  ? "text-gray700 hover:bg-murasaki100/10 hover:text-murasaki200"
+                  : "text-white/90 hover:bg-white/20 hover:text-white"
+              }`}
             >
-              {desktop.label}
+              {link.label}
             </Link>
           ))}
         </nav>
+
+        {/* Mobile Menu Button */}
+        <button
+          onClick={() => setIsOpen(!isOpen)}
+          className={`rounded-full p-2 transition-colors lg:hidden ${
+            isScrolled
+              ? "text-murasaki200 hover:bg-murasaki100/10"
+              : "text-white hover:bg-white/20"
+          }`}
+          aria-label={isOpen ? "Fechar menu" : "Abrir menu"}
+        >
+          {!isOpen ? <List size={28} /> : <X size={28} />}
+        </button>
       </div>
 
-      {/* Menu Mobile */}
+      {/* Mobile Menu */}
       {isOpen && (
-        <div className="absolute z-50 w-full rounded-b-lg bg-white p-6 shadow-lg">
-          <nav className="flex flex-col items-center gap-4">
-            {NAV_LINKS.map((mobile) => (
+        <div className="absolute left-0 right-0 top-full border-t border-murasaki100/20 bg-white/95 shadow-xl backdrop-blur-md lg:hidden">
+          <nav className="flex flex-col px-6 py-4">
+            {NAV_LINKS.map((link) => (
               <Link
-                key={mobile.href}
-                href={mobile.href}
-                target={mobile.external ? "_blank" : "_self"}
-                rel={mobile.external ? "noopener noreferrer" : undefined}
-                className="text-gray-800 text-lg font-semibold transition-colors hover:text-purple800"
+                key={link.href}
+                href={link.href}
+                target={link.external ? "_blank" : "_self"}
+                rel={link.external ? "noopener noreferrer" : undefined}
+                className="rounded-lg px-4 py-3 text-base font-medium text-gray700 transition-colors hover:bg-murasaki100/10 hover:text-murasaki200"
                 onClick={() => setIsOpen(false)}
               >
-                {mobile.label}
+                {link.label}
               </Link>
             ))}
           </nav>
