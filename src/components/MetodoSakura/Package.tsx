@@ -1,17 +1,17 @@
 "use client";
 
 import {
-    Calendar,
-    DeviceMobile,
-    Fire,
-    Gift,
-    Handshake,
-    Heart,
-    ListChecks,
-    Notebook,
-    Target,
-    Users,
-    VideoCamera,
+  Calendar,
+  DeviceMobile,
+  Fire,
+  Gift,
+  Handshake,
+  Heart,
+  ListChecks,
+  Notebook,
+  Target,
+  Users,
+  VideoCamera,
 } from "@phosphor-icons/react";
 
 const PILLARS = [
@@ -67,9 +67,6 @@ export default function MetodoSakuraPackage() {
           <h3 className="mb-4 text-2xl font-bold text-murasaki200 sm:text-3xl">
             O que você recebe no Método Sakura
           </h3>
-          <p className="mx-auto max-w-2xl text-gray500">
-            Tudo que você precisa para transformar sua relação com a comida
-          </p>
         </div>
 
         {/* Pillars Grid */}

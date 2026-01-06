@@ -1,13 +1,12 @@
 "use client";
 
 import {
-    CheckCircle,
-    Flower,
-    Heart,
-    Lightning,
-    Moon,
-    Scales,
-    Sparkle,
+  Flower,
+  Heart,
+  Lightning,
+  Moon,
+  Scales,
+  Sparkle
 } from "@phosphor-icons/react";
 
 const BENEFITS = [
@@ -43,11 +42,6 @@ export default function MetodoSakuraSolution() {
       <div className="container relative z-10 mx-auto max-w-5xl px-6">
         {/* Header */}
         <div className="mb-12 text-center">
-          <div className="mb-6 inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-murasaki100/20 to-midori100/20 px-5 py-2 shadow-sm">
-            <CheckCircle size={20} className="text-midori100" weight="fill" />
-            <span className="font-semibold text-murasaki200">A SOLUÇÃO</span>
-          </div>
-
           <h2 className="mb-4 text-3xl font-bold sm:text-4xl lg:text-5xl">
             <span className="text-murasaki300">O </span>
             <span className="bg-gradient-to-r from-murasaki200 to-murasaki300 bg-clip-text text-transparent">

@@ -144,11 +144,6 @@ export default function MetodoSakuraPainPoints() {
               </span>{" "}
               até agora?
             </h3>
-            <div className="inline-block rounded-full border-2 border-murasaki100/30 bg-white px-6 py-3 shadow-sm">
-              <p className="text-lg font-semibold text-murasaki200">
-                O que você já tentou (e não deu certo)
-              </p>
-            </div>
           </div>
 
           {/* Failed Attempts - vertical stacked cards */}

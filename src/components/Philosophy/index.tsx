@@ -5,11 +5,11 @@ import { CheckCircle, Flower, Heart, Sparkle } from "@phosphor-icons/react";
 const PHILOSOPHY_POINTS = [
   {
     icon: Heart,
-    text: "Sem dietas restritivas ou milagrosas",
+    text: "Nada de dietas restritivas ou promessas milagrosas",
   },
   {
     icon: Sparkle,
-    text: "Respeito aos seus gostos e cultura alimentar",
+    text: "Respeito aos seus gostos e à sua cultura alimentar",
   },
   {
     icon: CheckCircle,
@@ -17,15 +17,15 @@ const PHILOSOPHY_POINTS = [
   },
   {
     icon: Flower,
-    text: "Alimentação flexível adaptada à sua rotina",
+    text: "Alimentação flexível, adaptada à sua rotina real",
   },
   {
     icon: Heart,
-    text: "Acolhimento e suporte contínuo",
+    text: "Acolhimento e suporte contínuo durante todo o processo",
   },
   {
     icon: Sparkle,
-    text: "Leveza, consciência e constância",
+    text: "Leveza, consciência e constância como pilares do cuidado",
   },
 ];
 
@@ -33,10 +33,6 @@ const QUOTES = [
   {
     text: "Uma alimentação saudável precisa ser possível, prazerosa e sustentável.",
     highlight: false,
-  },
-  {
-    text: "Desistir não é opção. O caminho é leve, mas tem propósito.",
-    highlight: true,
   },
 ];
 
@@ -54,13 +50,7 @@ export default function Philosophy() {
 
       <div className="container relative z-10 mx-auto max-w-5xl px-6">
         {/* Header */}
-        <div className="mb-12 text-center">
-          <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-murasaki100/15 px-4 py-2">
-            <Flower size={20} className="text-murasaki200" weight="fill" />
-            <span className="text-sm font-semibold text-murasaki200">
-              FILOSOFIA SAKURA
-            </span>
-          </div>
+        <div className="mb-12 text-center">          
           <h2 className="mb-4 text-3xl font-bold text-murasaki200 sm:text-4xl">
             Minha Filosofia de Cuidado
           </h2>

@@ -1,6 +1,6 @@
 "use client";
 
-import { Brain, Calendar, Flower, Handshake, Users } from "@phosphor-icons/react";
+import { Brain, Calendar, Handshake, Users } from "@phosphor-icons/react";
 
 const METHOD_UNITES = [
   {
@@ -36,13 +36,6 @@ export default function MetodoSakuraIntro() {
 
       <div className="container relative z-10 mx-auto max-w-5xl px-6">
         <div className="text-center">
-          {/* Badge */}
-          <div className="mb-6 inline-flex items-center gap-2 rounded-full bg-murasaki100/20 px-5 py-2 shadow-sm">
-            <Flower size={24} className="text-murasaki200" weight="fill" />
-            <span className="font-semibold text-murasaki200">
-              CONHEÇA O MÉTODO
-            </span>
-          </div>
 
           {/* Title */}
           <h2 className="mb-6 text-4xl font-bold text-murasaki200 sm:text-5xl">

@@ -1,6 +1,6 @@
 "use client";
 
-import { Flower, GlobeHemisphereWest, Heart, Sparkle, Star } from "@phosphor-icons/react";
+import { GlobeHemisphereWest, Heart, Sparkle, Star } from "@phosphor-icons/react";
 import Image from "next/image";
 
 import nutriPhoto from "@/assets/nutri_2.png";
@@ -37,12 +37,6 @@ export default function AboutNutri() {
       <div className="container relative z-10 mx-auto max-w-5xl px-6">
         {/* Header */}
         <div className="mb-12 text-center">
-          <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-murasaki100/15 px-5 py-2">
-            <Flower size={20} className="text-murasaki200" weight="fill" />
-            <span className="font-semibold text-murasaki200">
-              QUEM É A NUTRI
-            </span>
-          </div>
           <h2 className="text-3xl font-bold text-murasaki300 sm:text-4xl">
             Conheça a Rose Azuma
           </h2>
