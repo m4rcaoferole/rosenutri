@@ -22,7 +22,7 @@ const FAQ_ITEMS = [
   {
     question: "As consultas são em que horário (fuso do Japão)?",
     answer:
-      "As consultas são agendadas de acordo com os horários do Japão (JST), de forma flexível para se adaptar à sua rotina de trabalho. Atendo inclusive aos finais de semana.",
+      "As consultas são agendadas de acordo com os horários do Japão (JST), de forma flexível para se adaptar à sua rotina de trabalho. Atendo inclusive aos aos sábados.",
   },
   {
     question: "Preciso comprar alimentos brasileiros?",

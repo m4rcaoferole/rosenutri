@@ -8,34 +8,34 @@ const TESTIMONIALS = [
     name: "Paciente do Método Sakura",
     location: "Japão",
     feedback:
-      "…tinha vergonha de sair nas fotos, agora voltei a gostar de tirar fotos.",
+      "...não me sentia bem nas fotografias, agora voltar a gostar de sair nas fotos.",
     rating: 5,
     initials: "🌸",
     bgColor: "bg-murasaki100",
   },
   {
     name: "Paciente do Método Sakura",
-    location: "Japão",
+    location: "Brasil",
     feedback:
-      "…Eu nem fiz 100% de tudo que me passou, em 4 semanas perdi 8 kgs, depois perdi mais 2 kgs, já ajustei minhas roupas 3 vezes, para poder continuar usando…e melhor ainda sem passar fome, amei, amei, amei.",
+      "Mesmo sem seguir tudo perfeitamente, tive resultados reais: em 4 semanas perdi 8 kg e, depois, mais 2 kg. Já precisei ajustar minhas roupas três vezes — e tudo isso sem passar fome. Um processo leve, possível e muito eficiente.",
     rating: 5,
     initials: "🌸",
     bgColor: "bg-midori100",
   },
   {
     name: "Paciente do Método Sakura",
-    location: "Japão",
+    location: "Austrália",
     feedback:
-      "Minha nutri favorita!! Ela me ajuda quando eu estava realmente precisando. Ela foi muito clara e atenciosa ao explicar cada ponto relacionado à alimentação e aos meus objetivos. As orientações foram personalizadas, baseadas na minha rotina, gostos e restrições.",
+      "Minha nutricionista favorita. Me ajudou em um momento em que eu realmente precisava. Foi muito clara e atenciosa ao explicar cada ponto da alimentação e dos meus objetivos. As orientações são totalmente personalizadas, respeitando minha rotina, gostos e limitações. Mesmo ainda em acompanhamento, já percebo perda de peso constante, mais organização na rotina e muito mais controle da compulsão por comida e doces.",
     rating: 5,
     initials: "🌸",
     bgColor: "bg-murasaki200",
   },
   {
-    name: "Paciente del Método Sakura",
-    location: "Japón",
+    name: "Latina no Japão",
+    location: "Japão",
     feedback:
-      "…tengo 5 semanas con el tratamiento de nutrición, he logrado bajar 7 kilos. Me está ayudando bastante con la alimentación y sin remedio para adelgazar. Ella siempre está pendiente y preguntando cómo me fue en la semana. Súper recomendada!",
+      "…Tengo 5 semanas en el tratamiento nutricional y ya he logrado bajar 7 kilos. La alimentación ha sido clave, sin necesidad de medicamentos para adelgazar. Rose siempre está pendiente y preguntando cómo me fue durante la semana. ¡Súper recomendada!",
     rating: 5,
     initials: "🌸",
     bgColor: "bg-midori200",

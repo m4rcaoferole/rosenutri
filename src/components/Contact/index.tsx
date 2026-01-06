@@ -38,7 +38,7 @@ export default function Contact() {
                 href="mailto:contato@rosenutri.com"
                 className="font-medium text-gray700 transition-colors hover:text-murasaki200"
               >
-                contato@rosenutri.com
+                roseazuma@gmail.com
               </a>
             </div>
           </div>
@@ -50,7 +50,7 @@ export default function Contact() {
             </div>
             <div className="text-left">
               <p className="text-sm text-gray500">Horário de atendimento</p>
-              <p className="font-medium text-gray700">Seg - Sex, 9h às 18h</p>
+              <p className="font-medium text-gray700">Seg - Sab, 9h às 17h</p>
             </div>
           </div>
         </div>

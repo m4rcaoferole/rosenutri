@@ -55,7 +55,7 @@ export default function Footer() {
               equilibrada.
             </p>
             <p className="text-sm font-medium text-white/90">
-              CRN-X: 12345 | Nutricionista
+              CRN 1º Região | Nutricionista
             </p>
           </div>
 
@@ -90,7 +90,7 @@ export default function Footer() {
                   href="https://wa.me/819038354891"
                   className="transition-colors hover:text-white"
                 >
-                  +81 90-3835-4891
+                  +81 090-3835-4891
                 </a>
               </li>
               <li className="flex items-center gap-3 text-sm text-white/80">
