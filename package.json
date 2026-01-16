@@ -23,7 +23,7 @@
     "@commitlint/cli": "19.8.0",
     "@commitlint/config-conventional": "19.8.0",
     "@rocketseat/eslint-config": "2.1.0",
-    "@types/node": "22",
+    "@types/node": "^22",
     "@types/react": "18",
     "@types/react-dom": "18",
     "autoprefixer": "10.4.17",
@@ -42,5 +42,8 @@
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
+  },
+  "engines": {
+    "node": "22.x"
   }
 }
