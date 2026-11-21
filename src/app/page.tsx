@@ -14,6 +14,7 @@ import {
 import NutriSection from "@/components/NutriSection";
 import Philosophy from "@/components/Philosophy";
 import Testimonials from "@/components/Testimonials";
+import FloatingWhatsApp from "@/components/ui/FloatingWhatsApp";
 
 export default function Home() {
   return (
@@ -23,9 +24,9 @@ export default function Home() {
       <main className="flex-1 bg-white">
         <NutriSection />
 
-        <MetodoSakuraIntro />
-
         <MetodoSakuraPainPoints />
+
+        <MetodoSakuraIntro />
 
         <MetodoSakuraSolution />
 
@@ -35,11 +36,11 @@ export default function Home() {
 
         <MetodoSakuraResults />
 
-        <Philosophy />
+        <Testimonials />
 
         <AboutNutri />
 
-        <Testimonials />
+        <Philosophy />
 
         <FAQ />
 
@@ -47,6 +48,8 @@ export default function Home() {
       </main>
 
       <Footer />
+
+      <FloatingWhatsApp />
     </div>
   );
 }

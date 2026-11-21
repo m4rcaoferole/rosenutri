@@ -1,2 +1,6 @@
 .next
 node_modules
+.cursorrules
+.DS_Store
+*.tsbuildinfo
+GEMINI.md

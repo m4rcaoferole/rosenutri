@@ -1,23 +1,21 @@
-"use client";
-
-import { Brain, Heart, Sparkle } from "@phosphor-icons/react";
+import { Brain, Heart, Sparkle } from "@phosphor-icons/react/dist/ssr";
 
 const RESULTS = [
   {
     title: "No corpo",
     icon: Heart,
-    color: "from-murasaki100 to-murasaki200",
+    headerClass: "bg-murasaki200 text-white",
     items: [
       "Emagrecimento real e consistente",
-      "Intestino regulado e menos inchaço",
+      "Melhor funcionamento do intestino e menos inchaço",
       "Melhor qualidade do sono e energia renovada",
-      "TPM e sintomas hormonais reduzidos",
+      "Alívio de sintomas hormonais e da TPM",
     ],
   },
   {
     title: "Na mente",
     icon: Brain,
-    color: "from-midori100 to-midori200",
+    headerClass: "bg-midori100 text-white",
     items: [
       "Fim da culpa ao comer",
       "Paz e consciência alimentar",
@@ -28,7 +26,7 @@ const RESULTS = [
   {
     title: "Na vida",
     icon: Sparkle,
-    color: "from-shiro300 to-warning",
+    headerClass: "bg-shiro300 text-murasaki300",
     items: [
       "Equilíbrio entre rotina e autocuidado",
       "Pertencimento e motivação",
@@ -40,21 +38,13 @@ const RESULTS = [
 export default function MetodoSakuraResults() {
   return (
     <section className="relative overflow-hidden bg-gradient-to-b from-shiro100 to-white py-16">
-      {/* Decorative elements */}
-      <div className="absolute -left-20 top-1/3 h-64 w-64 rounded-full bg-murasaki100/5 blur-3xl" />
-      <div className="absolute -right-20 bottom-1/4 h-48 w-48 rounded-full bg-midori100/5 blur-3xl" />
-
       <div className="container relative z-10 mx-auto max-w-6xl px-6">
-        {/* Header */}
         <div className="mb-12 text-center">
-          <h2 className="mb-4 text-3xl font-bold sm:text-4xl lg:text-5xl">
-            <span className="bg-gradient-to-r from-murasaki200 to-murasaki300 bg-clip-text text-transparent">
-              Transformação Completa
-            </span>
+          <h2 className="mb-3 font-serif text-3xl font-bold text-murasaki300 sm:text-4xl">
+            Transformação em cada área da sua vida
           </h2>
-          <p className="mx-auto max-w-xl text-lg text-gray700">
-            Resultados esperados em{" "}
-            <strong className="text-murasaki300">90 dias</strong>
+          <p className="mx-auto max-w-xl text-base text-gray700 sm:text-lg">
+            O que você constrói ao longo do acompanhamento
           </p>
         </div>
 
@@ -65,24 +55,25 @@ export default function MetodoSakuraResults() {
             return (
               <div
                 key={index}
-                className="group rounded-2xl bg-white p-6 shadow-lg transition-all hover:shadow-xl"
+                className="rounded-2xl border border-gray300/60 bg-white p-6 shadow-md"
               >
-                {/* Header */}
                 <div
-                  className={`mb-6 inline-flex items-center gap-3 rounded-xl bg-gradient-to-r ${category.color} px-4 py-2`}
+                  className={`mb-6 inline-flex items-center gap-3 rounded-xl px-4 py-2.5 ${category.headerClass}`}
                 >
-                  <Icon size={24} className="text-white" weight="fill" />
-                  <h3 className="font-bold text-white">{category.title}</h3>
+                  <Icon size={22} weight="fill" aria-hidden="true" />
+                  <h3 className="text-base font-bold">{category.title}</h3>
                 </div>
 
-                {/* Items */}
                 <ul className="space-y-3">
                   {category.items.map((item, idx) => (
                     <li
                       key={idx}
-                      className="flex items-start gap-3 text-gray700"
+                      className="flex items-start gap-3 text-base leading-relaxed text-gray700"
                     >
-                      <span className="mt-1 text-murasaki200">•</span>
+                      <span
+                        className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-murasaki200"
+                        aria-hidden="true"
+                      />
                       <span>{item}</span>
                     </li>
                   ))}

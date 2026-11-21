@@ -3,6 +3,9 @@
 import { CaretDown } from "@phosphor-icons/react";
 import { useState } from "react";
 
+import WhatsAppButton from "@/components/ui/WhatsAppButton";
+import { CTA_TEXT, WHATSAPP_MESSAGES } from "@/config/site";
+
 const FAQ_ITEMS = [
   {
     question: "Como funciona o Método Sakura?",
@@ -22,7 +25,7 @@ const FAQ_ITEMS = [
   {
     question: "As consultas são em que horário (fuso do Japão)?",
     answer:
-      "As consultas são agendadas de acordo com os horários do Japão (JST), de forma flexível para se adaptar à sua rotina de trabalho. Atendo inclusive aos aos sábados.",
+      "As consultas são agendadas de acordo com os horários do Japão (JST), de forma flexível para se adaptar à sua rotina de trabalho. Atendo inclusive aos sábados.",
   },
   {
     question: "Preciso comprar alimentos brasileiros?",
@@ -32,7 +35,27 @@ const FAQ_ITEMS = [
   {
     question: "Atende em espanhol também?",
     answer:
-      "Sim! Atendo mulheres brasileiras e latinas (peruanas, filipinas, etc.) que vivem no Japão. O acompanhamento pode ser em português ou espanhol.",
+      "Sim! Atendo mulheres brasileiras e latinas 40+ que vivem no Japão. O acompanhamento pode ser em português ou espanhol.",
+  },
+  {
+    question: "Não tenho tempo de cozinhar. Isso funciona para mim?",
+    answer:
+      "Sim. O plano é montado a partir da sua rotina, não o contrário. Você recebe opções práticas, com alimentos de mercado japonês, e o guia de marmitas congeladas, que é um dos bônus do Método Sakura.",
+  },
+  {
+    question: "Tenho uma condição de saúde ou tomo medicação. Posso participar?",
+    answer:
+      "Pode, e o plano considera o seu histórico. Conte tudo na primeira conversa, e se for preciso, o acompanhamento é feito junto com o seu médico.",
+  },
+  {
+    question: "E se eu não conseguir seguir o plano em alguma semana?",
+    answer:
+      "Acontece, e faz parte do processo. O plano é flexível, e o sistema antidesistência, com diário, missões semanais e acompanhamento contínuo, existe para você retomar sem culpa.",
+  },
+  {
+    question: "Quanto custa e como faço para começar?",
+    answer:
+      "Os valores e as formas de pagamento são enviados pelo WhatsApp, junto com os horários disponíveis.",
   },
 ];
 
@@ -48,13 +71,14 @@ function FAQItem({
   onClick: () => void;
 }) {
   return (
-    <div className="border-b border-murasaki100/30">
+    <div className="border-b border-murasaki100/30 last:border-b-0">
       <button
+        type="button"
         onClick={onClick}
-        className="flex w-full items-center justify-between py-5 text-left transition-colors hover:text-murasaki300"
+        className="flex min-h-[56px] w-full cursor-pointer items-center justify-between py-5 text-left transition-colors hover:text-murasaki300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-murasaki200"
         aria-expanded={isOpen}
       >
-        <span className="pr-4 text-lg font-semibold text-gray-800">
+        <span className="pr-4 text-base font-semibold text-gray700 sm:text-lg">
           {question}
         </span>
         <CaretDown
@@ -62,6 +86,7 @@ function FAQItem({
           className={`shrink-0 text-murasaki200 transition-transform duration-300 ${
             isOpen ? "rotate-180" : ""
           }`}
+          aria-hidden="true"
         />
       </button>
       <div
@@ -70,7 +95,7 @@ function FAQItem({
         }`}
       >
         <div className="overflow-hidden">
-          <p className="text-gray-600 leading-relaxed">{answer}</p>
+          <p className="text-base leading-relaxed text-gray500">{answer}</p>
         </div>
       </div>
     </div>
@@ -81,25 +106,32 @@ export default function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <section id="faq" className="bg-white py-16">
+    <section id="faq" className="bg-white py-16 lg:py-20">
       <div className="container mx-auto max-w-3xl px-6">
-        <h2 className="mb-2 text-center text-3xl font-bold text-murasaki200">
+        <h2 className="mb-3 text-center font-serif text-3xl font-bold text-murasaki200 sm:text-4xl">
           Perguntas Frequentes
         </h2>
-        <p className="mb-10 text-center text-gray-600">
+        <p className="mb-10 text-center text-base text-gray500 sm:text-lg">
           Tire suas dúvidas sobre o acompanhamento nutricional
         </p>
 
-        <div className="rounded-xl bg-gray-50 p-6 shadow-sm">
+        <div className="rounded-2xl border border-gray300/60 bg-gray50 p-6 shadow-sm sm:p-8">
           {FAQ_ITEMS.map((item, index) => (
             <FAQItem
-              key={index}
+              key={item.question}
               question={item.question}
               answer={item.answer}
               isOpen={openIndex === index}
               onClick={() => setOpenIndex(openIndex === index ? null : index)}
             />
           ))}
+        </div>
+
+        <div className="mt-10 text-center">
+          <WhatsAppButton
+            label={CTA_TEXT}
+            message={WHATSAPP_MESSAGES.metodoSakura}
+          />
         </div>
       </div>
     </section>

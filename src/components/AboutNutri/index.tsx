@@ -1,6 +1,10 @@
-"use client";
-
-import { GlobeHemisphereWest, Heart, Sparkle, Star } from "@phosphor-icons/react";
+import {
+  CalendarCheck,
+  GlobeHemisphereWest,
+  Heart,
+  Sparkle,
+  Star,
+} from "@phosphor-icons/react/dist/ssr";
 import Image from "next/image";
 
 import nutriPhoto from "@/assets/nutri_2.png";
@@ -9,6 +13,10 @@ const CREDENTIALS = [
   {
     icon: Star,
     text: "Nutricionista há mais de 17 anos",
+  },
+  {
+    icon: CalendarCheck,
+    text: "3 anos de atendimento a mulheres 40+ no Japão",
   },
   {
     icon: Sparkle,
@@ -26,18 +34,13 @@ const CREDENTIALS = [
 
 export default function AboutNutri() {
   return (
-    <section id="about" className="relative overflow-hidden py-16">
-      {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-murasaki100/10 via-white to-shiro100" />
-
-      {/* Decorative elements */}
-      <div className="absolute -right-20 top-1/4 h-64 w-64 rounded-full bg-murasaki100/10 blur-3xl" />
-      <div className="absolute -left-20 bottom-1/4 h-48 w-48 rounded-full bg-midori100/5 blur-3xl" />
-
+    <section
+      id="about"
+      className="relative overflow-hidden bg-gradient-to-br from-murasaki100/10 via-white to-shiro100 py-16 lg:py-20"
+    >
       <div className="container relative z-10 mx-auto max-w-5xl px-6">
-        {/* Header */}
         <div className="mb-12 text-center">
-          <h2 className="text-3xl font-bold text-murasaki300 sm:text-4xl">
+          <h2 className="font-serif text-3xl font-bold text-murasaki300 sm:text-4xl">
             Conheça a Rose Azuma
           </h2>
         </div>
@@ -46,16 +49,16 @@ export default function AboutNutri() {
           {/* Photo */}
           <div className="shrink-0">
             <div className="relative">
-              <div className="absolute -inset-4 rounded-3xl bg-gradient-to-br from-murasaki100 to-murasaki200 opacity-20 blur-2xl" />
               <Image
                 src={nutriPhoto}
                 alt="Nutricionista Rosemary Azuma"
                 width={380}
                 height={450}
+                sizes="(max-width: 1024px) 288px, 320px"
                 className="relative h-auto w-72 rounded-2xl border-4 border-white object-cover shadow-2xl lg:w-80"
               />
               <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 rounded-xl bg-gradient-to-r from-murasaki200 to-murasaki300 px-6 py-3 text-center shadow-lg">
-                <span className="text-sm font-semibold text-white">
+                <span className="whitespace-nowrap text-base font-semibold text-white">
                   Rose Azuma
                 </span>
               </div>
@@ -64,29 +67,21 @@ export default function AboutNutri() {
 
           {/* Content */}
           <div className="flex-1 text-center lg:text-left">
-            <h3 className="mb-2 text-3xl font-bold text-murasaki300">
-              Rose Azuma
-            </h3>
-            <p className="mb-6 text-lg font-medium text-midori100">
-              Nutricionista | Especialista em Emagrecimento e Saúde da Mulher
-            </p>
-
-            <div className="mb-8 space-y-4 text-gray700">
-              <p className="text-lg leading-relaxed">
+            <div className="mb-8 space-y-4 text-base leading-relaxed text-gray700 sm:text-lg">
+              <p>
                 Eu sou <strong className="text-murasaki300">Rose Azuma</strong>,
                 nutricionista há mais de{" "}
-                <strong className="text-murasaki300">17 anos</strong>,
-                especialista em emagrecimento e saúde da mulher.
-              </p>
-              <p className="leading-relaxed">
-                Mas antes de tudo, sou uma{" "}
+                <strong className="text-murasaki300">17 anos</strong>. Há{" "}
+                <strong className="text-murasaki300">3 anos</strong>, atendo
+                mulheres 40+ aqui no Japão, em acompanhamento 100% online. Mas
+                antes de tudo, sou uma{" "}
                 <strong className="text-murasaki300">
                   mulher brasileira vivendo no Japão
-                </strong>{" "}
-                — que já sentiu o peso da rotina, o cansaço e o medo de nunca
+                </strong>
+                , que já sentiu o peso da rotina, o cansaço e o medo de nunca
                 mais se reconhecer.
               </p>
-              <p className="leading-relaxed">
+              <p>
                 Hoje, ensino mulheres a emagrecerem de forma{" "}
                 <strong className="text-murasaki300">
                   leve, inteligente e sustentável
@@ -96,30 +91,31 @@ export default function AboutNutri() {
             </div>
 
             {/* Quote */}
-            <div className="mb-8 rounded-xl border-l-4 border-murasaki200 bg-murasaki100/10 p-4">
-              <p className="italic text-gray700">
-                "Nunca é sobre dieta. É sobre recomeçar com leveza e
-                consciência."
+            <div className="mb-8 rounded-xl border-l-4 border-murasaki200 bg-murasaki100/10 p-5 text-left">
+              <p className="font-serif text-lg italic text-gray700">
+                &ldquo;Nunca é sobre dieta. É sobre recomeçar com leveza e
+                consciência.&rdquo;
               </p>
             </div>
 
             {/* Credentials Grid */}
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-              {CREDENTIALS.map((credential, index) => {
+              {CREDENTIALS.map((credential) => {
                 const Icon = credential.icon;
                 return (
                   <div
-                    key={index}
-                    className="group flex items-center gap-4 rounded-xl bg-white p-4 shadow-sm transition-all hover:shadow-lg"
+                    key={credential.text}
+                    className="flex items-center gap-4 rounded-xl border border-gray300/60 bg-white p-4 text-left shadow-sm"
                   >
-                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-murasaki100/20 to-midori100/20">
+                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-murasaki100/15">
                       <Icon
                         size={20}
                         className="text-murasaki200"
                         weight="fill"
+                        aria-hidden="true"
                       />
                     </div>
-                    <span className="text-sm font-medium text-gray700">
+                    <span className="text-base font-medium leading-snug text-gray700">
                       {credential.text}
                     </span>
                   </div>

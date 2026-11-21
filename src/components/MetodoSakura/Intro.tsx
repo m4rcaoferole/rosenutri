@@ -1,6 +1,6 @@
-"use client";
+import { Brain, Calendar, Handshake, Users } from "@phosphor-icons/react/dist/ssr";
 
-import { Brain, Calendar, Handshake, Users } from "@phosphor-icons/react";
+import SakuraIcon from "@/components/ui/SakuraIcon";
 
 const METHOD_UNITES = [
   {
@@ -24,42 +24,39 @@ const METHOD_UNITES = [
 export default function MetodoSakuraIntro() {
   return (
     <section
-      id="services"
-      className="relative overflow-hidden bg-gradient-to-br from-murasaki100/25 via-shiro100 to-murasaki100/15 py-16"
+      id="metodo"
+      className="relative overflow-hidden bg-gradient-to-br from-murasaki100/20 via-shiro100 to-murasaki100/10 py-16 lg:py-20"
     >
-      {/* Decorative sakura elements */}
-      <div className="absolute left-10 top-20 text-6xl opacity-20">🌸</div>
-      <div className="absolute right-20 top-40 text-4xl opacity-15">🌸</div>
-      <div className="absolute bottom-10 left-1/4 text-5xl opacity-10">🌸</div>
-      <div className="absolute -right-10 bottom-20 h-64 w-64 rounded-full bg-murasaki100/10 blur-3xl" />
-      <div className="absolute -left-20 top-0 h-48 w-48 rounded-full bg-shiro200/30 blur-3xl" />
+      {/* Decorative botanical sakura SVGs */}
+      <SakuraIcon className="pointer-events-none absolute left-8 top-12 h-16 w-16 text-murasaki100/15" />
+      <SakuraIcon className="pointer-events-none absolute right-10 bottom-12 h-14 w-14 text-murasaki100/15" />
 
       <div className="container relative z-10 mx-auto max-w-5xl px-6">
         <div className="text-center">
-
-          {/* Title */}
-          <h2 className="mb-6 text-4xl font-bold text-murasaki200 sm:text-5xl">
+          <h2 className="mb-6 font-serif text-3xl font-bold text-murasaki200 sm:text-5xl">
             Método Sakura
           </h2>
 
-          {/* Description */}
-          <p className="mx-auto mb-8 max-w-3xl text-lg leading-relaxed text-gray700">
+          <p className="mx-auto mb-8 max-w-3xl text-base leading-relaxed text-gray700 sm:text-lg">
             O <strong className="text-murasaki300">Método Sakura</strong> é um
             Programa Nutricional de{" "}
             <strong className="text-murasaki300">90 dias</strong> criado para
-            mulheres brasileiras e latinas que vivem no Japão e desejam
-            emagrecer com leveza, consciência e constância —{" "}
+            mulheres brasileiras e latinas{" "}
+            <strong className="text-murasaki300">40+</strong> que vivem no Japão
+            e desejam emagrecer com leveza, consciência e constância —{" "}
             <em>sem dietas impossíveis e sem culpa.</em>
           </p>
 
           {/* Inspiration Card */}
-          <div className="mx-auto max-w-3xl rounded-2xl border border-murasaki100/40 bg-white/80 p-8 shadow-lg backdrop-blur-sm">
-            <p className="mb-6 text-gray700">
-              Inspirado no ciclo da flor de cerejeira{" "}
-              <span className="text-xl">🌸</span>{" "}
-              <strong className="text-murasaki200">(Sakura)</strong> — símbolo
-              japonês de renovação e recomeço — o método une:
-            </p>
+          <div className="mx-auto max-w-3xl rounded-2xl border border-murasaki100/30 bg-white/90 p-6 shadow-lg sm:p-8">
+            <div className="mb-6 flex flex-wrap items-center justify-center gap-2 text-base text-gray700 sm:text-lg">
+              <span>Inspirado no ciclo da flor de cerejeira</span>
+              <SakuraIcon className="inline h-5 w-5 text-murasaki200" />
+              <strong className="text-murasaki200">(Sakura)</strong>
+              <span>
+                — símbolo japonês de renovação e recomeço — o método une:
+              </span>
+            </div>
 
             {/* Method Unites Items */}
             <div className="mb-8 grid gap-4 text-left sm:grid-cols-2">
@@ -68,31 +65,34 @@ export default function MetodoSakuraIntro() {
                 return (
                   <div
                     key={index}
-                    className="flex items-start gap-3 rounded-xl bg-gradient-to-r from-murasaki100/15 to-transparent p-4"
+                    className="flex items-start gap-3 rounded-xl bg-shiro100/60 p-4"
                   >
                     <Icon
                       size={24}
                       className="mt-0.5 shrink-0 text-murasaki200"
+                      aria-hidden="true"
                     />
-                    <span className="text-sm text-gray700">{item.text}</span>
+                    <span className="text-base leading-relaxed text-gray700">
+                      {item.text}
+                    </span>
                   </div>
                 );
               })}
             </div>
 
             {/* Promise */}
-            <div className="rounded-xl bg-gradient-to-r from-midori100/15 to-midori100/5 p-6">
-              <p className="mb-4 text-gray700">
+            <div className="rounded-xl bg-midori100/10 p-6">
+              <p className="mb-4 text-base leading-relaxed text-gray700 sm:text-lg">
                 Aqui, você não recebe apenas um plano alimentar.
                 <br />
                 <strong className="text-murasaki300">
-                  Você recebe um processo de transformação completa
-                </strong>{" "}
-                — no corpo, na mente e na forma de viver.
+                  Você recebe um processo que cabe na sua rotina e muda a sua
+                  relação com a comida.
+                </strong>
               </p>
-              <p className="text-lg font-semibold italic text-murasaki200">
-                "O florescer da mulher começa quando ela decide cuidar de si com
-                leveza."
+              <p className="font-serif text-lg font-semibold italic text-murasaki200">
+                &ldquo;O florescer da mulher começa quando ela decide cuidar de
+                si com leveza.&rdquo;
               </p>
             </div>
           </div>

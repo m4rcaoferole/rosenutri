@@ -1,13 +1,11 @@
-"use client";
-
 import {
   Flower,
   Heart,
   Lightning,
   Moon,
   Scales,
-  Sparkle
-} from "@phosphor-icons/react";
+  Sparkle,
+} from "@phosphor-icons/react/dist/ssr";
 
 const BENEFITS = [
   {
@@ -16,7 +14,7 @@ const BENEFITS = [
   },
   {
     icon: Heart,
-    text: "Regular o intestino, o sono e os hormônios",
+    text: "Melhorar o funcionamento do intestino, a qualidade do sono e os sintomas ligados ao ciclo hormonal",
   },
   {
     icon: Lightning,
@@ -34,35 +32,23 @@ const BENEFITS = [
 
 export default function MetodoSakuraSolution() {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-white via-murasaki100/10 to-shiro100 py-16">
-      {/* Decorative elements */}
-      <div className="absolute -left-20 top-1/4 h-64 w-64 rounded-full bg-murasaki100/10 blur-3xl" />
-      <div className="absolute -right-20 bottom-1/4 h-48 w-48 rounded-full bg-midori100/10 blur-3xl" />
-
-      <div className="container relative z-10 mx-auto max-w-5xl px-6">
-        {/* Header */}
-        <div className="mb-12 text-center">
-          <h2 className="mb-4 text-3xl font-bold sm:text-4xl lg:text-5xl">
-            <span className="text-murasaki300">O </span>
-            <span className="bg-gradient-to-r from-murasaki200 to-murasaki300 bg-clip-text text-transparent">
-              MÉTODO SAKURA
-            </span>
+    <section className="relative overflow-hidden bg-white py-16">
+      <div className="container relative z-10 mx-auto max-w-4xl px-6">
+        <div className="mb-10 text-center">
+          <h2 className="mb-3 font-serif text-3xl font-bold text-murasaki300 sm:text-4xl">
+            O que muda com o Método Sakura
           </h2>
-
-          <p className="mx-auto max-w-2xl text-lg text-gray700">
-            Um programa completo de{" "}
-            <strong className="text-murasaki300">90 dias</strong> para
-            reconectar você ao seu corpo, seu ritmo e seu equilíbrio natural.
+          <p className="mx-auto max-w-2xl text-base text-gray500 sm:text-lg">
+            Um acompanhamento pensado para reconectar você ao seu corpo, ao seu
+            ritmo e ao seu equilíbrio natural.
           </p>
         </div>
 
-        {/* Benefits Section */}
+        {/* Benefits List */}
         <div className="mb-12">
-          <div className="mb-8 text-center">
-            <p className="text-lg font-semibold text-murasaki200">
-              Você vai:
-            </p>
-          </div>
+          <p className="mb-6 text-center text-lg font-semibold text-murasaki200">
+            Você vai:
+          </p>
 
           <div className="mx-auto max-w-3xl space-y-4">
             {BENEFITS.map((benefit, index) => {
@@ -70,16 +56,17 @@ export default function MetodoSakuraSolution() {
               return (
                 <div
                   key={index}
-                  className="group flex items-center gap-4 rounded-xl bg-white p-4 shadow-sm transition-all duration-300 hover:-translate-x-1 hover:shadow-lg"
+                  className="flex items-center gap-4 rounded-xl border border-gray300/60 bg-gray50 p-4 shadow-sm"
                 >
-                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-murasaki100/20 to-midori100/20">
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-murasaki100/15">
                     <Icon
                       size={24}
-                      className="text-murasaki200 transition-colors group-hover:text-murasaki300"
+                      className="text-murasaki200"
                       weight="duotone"
+                      aria-hidden="true"
                     />
                   </div>
-                  <p className="text-lg font-medium text-gray700 transition-colors group-hover:text-murasaki300">
+                  <p className="text-base font-medium leading-relaxed text-gray700 sm:text-lg">
                     {benefit.text}
                   </p>
                 </div>
@@ -89,11 +76,16 @@ export default function MetodoSakuraSolution() {
         </div>
 
         {/* Quote Card */}
-        <div className="mx-auto max-w-3xl rounded-2xl border-2 border-murasaki100/30 bg-white p-8 text-center shadow-lg">
-          <Flower size={40} className="mx-auto mb-4 text-murasaki200" weight="fill" />
-          <p className="text-xl font-medium italic text-gray700 sm:text-2xl">
-            "Em 90 dias, recupere energia, leveza e autoconfiança — com um
-            método que respeita o seu ritmo, o seu corpo e a sua vida."
+        <div className="mx-auto max-w-3xl rounded-2xl border border-murasaki100/30 bg-shiro100/60 p-8 text-center">
+          <Flower
+            size={36}
+            className="mx-auto mb-4 text-murasaki200"
+            weight="fill"
+            aria-hidden="true"
+          />
+          <p className="font-serif text-xl font-medium italic leading-relaxed text-gray700 sm:text-2xl">
+            &ldquo;Recupere energia, leveza e autoconfiança — com um método que
+            respeita o seu ritmo, o seu corpo e a sua vida.&rdquo;
           </p>
         </div>
       </div>

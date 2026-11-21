@@ -25,6 +25,12 @@ module.exports = {
       warning: "#facc15", // Atenção/alertas (amarelo)
       error: "#ef4444", // Erros e validações (vermelho)
     },
+    extend: {
+      fontFamily: {
+        sans: ["var(--font-inter)", "sans-serif"],
+        serif: ["var(--font-lora)", "serif"],
+      },
+    },
   },
   plugins: [require("tailwindcss-animate")],
 };

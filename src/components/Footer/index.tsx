@@ -1,33 +1,32 @@
-"use client";
-
 import {
-  EnvelopeIcon,
-  MapPinIcon,
-  PhoneIcon,
-} from "@heroicons/react/24/outline";
-import { InstagramLogo, WhatsappLogo } from "@phosphor-icons/react";
+  Clock,
+  Envelope,
+  InstagramLogo,
+  MapPin,
+  Phone,
+  WhatsappLogo,
+} from "@phosphor-icons/react/dist/ssr";
 import Image from "next/image";
 import Link from "next/link";
 
-import logoRose from "../../assets/logo-rose-original.png";
+import logoCreme from "@/assets/logo-rose-creme.png";
+import { CONTACT, getWhatsAppUrl, WHATSAPP_MESSAGES } from "@/config/site";
 
 const QUICK_LINKS = [
-  { href: "#services", label: "Serviços" },
-  { href: "#specialties", label: "Áreas de Atuação" },
-  { href: "#about", label: "Sobre a Nutri" },
+  { href: "#metodo", label: "Método" },
+  { href: "#about", label: "Sobre" },
   { href: "#testimonials", label: "Depoimentos" },
   { href: "#faq", label: "FAQ" },
-  { href: "#contact", label: "Contato" },
 ];
 
 const SOCIAL_LINKS = [
   {
-    href: "https://www.instagram.com/roseazuma.nutri",
+    href: CONTACT.instagramUrl,
     icon: InstagramLogo,
     label: "Instagram",
   },
   {
-    href: "https://wa.me/819038354891",
+    href: getWhatsAppUrl(WHATSAPP_MESSAGES.metodoSakura),
     icon: WhatsappLogo,
     label: "WhatsApp",
   },
@@ -43,31 +42,32 @@ export default function Footer() {
           {/* Logo and Description */}
           <div className="lg:col-span-2">
             <Image
-              src={logoRose}
-              alt="Logo Rose Nutri"
-              width={120}
-              height={120}
-              className="mb-4 brightness-0 invert"
+              src={logoCreme}
+              alt="Logo Rose Azuma Nutri"
+              width={130}
+              height={52}
+              className="mb-4 h-12 w-auto object-contain"
             />
-            <p className="mb-4 max-w-sm text-sm leading-relaxed text-white/80">
-              Acompanhamento nutricional online personalizado. Transforme sua
-              relação com a comida e conquiste uma vida mais saudável e
-              equilibrada.
+            <p className="mb-4 max-w-sm text-base leading-relaxed text-white/90">
+              Acompanhamento nutricional online para mulheres 40+ no Japão. Use
+              a sua rotina como aliada no seu emagrecimento.
             </p>
-            <p className="text-sm font-medium text-white/90">
-              CRN 1º Região | Nutricionista
+            <p className="text-sm font-semibold text-shiro200 sm:text-base">
+              {CONTACT.crn} | Nutricionista
             </p>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h4 className="mb-4 text-lg font-semibold">Links Rápidos</h4>
-            <ul className="space-y-2">
+            <h4 className="mb-4 font-serif text-lg font-semibold">
+              Navegação
+            </h4>
+            <ul className="space-y-3">
               {QUICK_LINKS.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm text-white/80 transition-colors hover:text-white"
+                    className="inline-flex min-h-[36px] items-center text-base text-white/85 transition-colors hover:text-white"
                   >
                     {link.label}
                   </Link>
@@ -78,34 +78,40 @@ export default function Footer() {
 
           {/* Contact Info */}
           <div>
-            <h4 className="mb-4 text-lg font-semibold">Contato</h4>
-            <ul className="space-y-3">
-              <li className="flex items-center gap-3 text-sm text-white/80">
-                <MapPinIcon className="h-5 w-5 shrink-0" />
-                <span>Japão / Brasil (Online)</span>
+            <h4 className="mb-4 font-serif text-lg font-semibold">Contato</h4>
+            <ul className="space-y-3 text-sm text-white/90 sm:text-base">
+              <li className="flex items-start gap-3">
+                <MapPin size={20} className="mt-0.5 shrink-0" aria-hidden="true" />
+                <span>{CONTACT.location}</span>
               </li>
-              <li className="flex items-center gap-3 text-sm text-white/80">
-                <PhoneIcon className="h-5 w-5 shrink-0" />
+              <li className="flex items-start gap-3">
+                <Clock size={20} className="mt-0.5 shrink-0" aria-hidden="true" />
+                <span>{CONTACT.schedule}</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <Phone size={20} className="mt-0.5 shrink-0" aria-hidden="true" />
                 <a
-                  href="https://wa.me/819038354891"
+                  href={getWhatsAppUrl(WHATSAPP_MESSAGES.metodoSakura)}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="transition-colors hover:text-white"
                 >
-                  +81 090-3835-4891
+                  {CONTACT.phoneDisplay}
                 </a>
               </li>
-              <li className="flex items-center gap-3 text-sm text-white/80">
-                <EnvelopeIcon className="h-5 w-5 shrink-0" />
+              <li className="flex items-start gap-3">
+                <Envelope size={20} className="mt-0.5 shrink-0" aria-hidden="true" />
                 <a
-                  href="mailto:roseazuma@gmail.com"
+                  href={`mailto:${CONTACT.email}`}
                   className="transition-colors hover:text-white"
                 >
-                  roseazuma@gmail.com
+                  {CONTACT.email}
                 </a>
               </li>
             </ul>
 
             {/* Social Links */}
-            <div className="mt-6 flex gap-4">
+            <div className="mt-6 flex gap-3">
               {SOCIAL_LINKS.map((social) => {
                 const Icon = social.icon;
                 return (
@@ -114,10 +120,10 @@ export default function Footer() {
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 transition-colors hover:bg-white/20"
+                    className="flex h-11 w-11 cursor-pointer items-center justify-center rounded-full bg-white/15 transition-colors hover:bg-white/25"
                     aria-label={social.label}
                   >
-                    <Icon size={20} />
+                    <Icon size={22} aria-hidden="true" />
                   </a>
                 );
               })}
@@ -126,18 +132,8 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-10 border-t border-white/20 pt-6">
-          <div className="flex flex-col items-center justify-between gap-4 text-center text-sm text-white/60 md:flex-row">
-            <p>© {currentYear} Rose Azuma Nutri. Todos os direitos reservados.</p>
-            <div className="flex gap-6">
-              <Link href="#" className="transition-colors hover:text-white">
-                Termos de Uso
-              </Link>
-              <Link href="#" className="transition-colors hover:text-white">
-                Política de Privacidade
-              </Link>
-            </div>
-          </div>
+        <div className="mt-10 border-t border-white/20 pt-6 text-center text-sm text-white/75">
+          <p>© {currentYear} Rose Azuma Nutri. Todos os direitos reservados.</p>
         </div>
       </div>
     </footer>

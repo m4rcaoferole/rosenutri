@@ -1,6 +1,8 @@
-"use client";
+import { CheckCircle, Flower, Heart, Sparkle } from "@phosphor-icons/react/dist/ssr";
 
-import { CheckCircle, Flower, Heart, Sparkle } from "@phosphor-icons/react";
+import SakuraIcon from "@/components/ui/SakuraIcon";
+import WhatsAppButton from "@/components/ui/WhatsAppButton";
+import { CTA_TEXT, WHATSAPP_MESSAGES } from "@/config/site";
 
 const PHILOSOPHY_POINTS = [
   {
@@ -29,32 +31,18 @@ const PHILOSOPHY_POINTS = [
   },
 ];
 
-const QUOTES = [
-  {
-    text: "Uma alimentação saudável precisa ser possível, prazerosa e sustentável.",
-    highlight: false,
-  },
-];
-
 export default function Philosophy() {
   return (
-    <section className="relative overflow-hidden py-16">
-      {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-murasaki100/20 via-shiro100 to-midori100/15" />
-
-      {/* Decorative elements */}
-      <div className="absolute left-10 top-10 text-5xl opacity-15">🌸</div>
-      <div className="absolute bottom-10 right-20 text-4xl opacity-10">🌸</div>
-      <div className="absolute -right-20 top-1/2 h-64 w-64 rounded-full bg-murasaki100/10 blur-3xl" />
-      <div className="absolute -left-20 bottom-0 h-48 w-48 rounded-full bg-midori100/10 blur-3xl" />
+    <section className="relative overflow-hidden bg-gradient-to-br from-murasaki100/15 via-shiro100 to-midori100/10 py-16 lg:py-20">
+      <SakuraIcon className="pointer-events-none absolute left-10 top-10 h-14 w-14 text-murasaki100/15" />
+      <SakuraIcon className="pointer-events-none absolute bottom-10 right-16 h-12 w-12 text-murasaki100/15" />
 
       <div className="container relative z-10 mx-auto max-w-5xl px-6">
-        {/* Header */}
-        <div className="mb-12 text-center">          
-          <h2 className="mb-4 text-3xl font-bold text-murasaki200 sm:text-4xl">
+        <div className="mb-12 text-center">
+          <h2 className="mb-4 font-serif text-3xl font-bold text-murasaki200 sm:text-4xl">
             Minha Filosofia de Cuidado
           </h2>
-          <p className="mx-auto max-w-2xl text-lg text-gray700">
+          <p className="mx-auto max-w-2xl text-base leading-relaxed text-gray700 sm:text-lg">
             Acredito em uma nutrição que transforma vidas sem sofrimento.
             Inspirada no ciclo da Sakura, onde cada fase tem seu tempo e sua
             beleza.
@@ -63,60 +51,48 @@ export default function Philosophy() {
 
         {/* Main Content */}
         <div className="grid gap-8 lg:grid-cols-2">
-          {/* Quotes Card */}
-          <div className="rounded-2xl bg-white p-8 shadow-xl">
-            <h3 className="mb-6 text-lg font-semibold text-murasaki200">
-              Palavras que guiam meu trabalho
-            </h3>
-
-            <div className="space-y-6">
-              {QUOTES.map((quote, index) => (
-                <blockquote
-                  key={index}
-                  className={`rounded-xl p-5 ${
-                    quote.highlight
-                      ? "border-2 border-murasaki100 bg-gradient-to-r from-murasaki100/10 to-transparent"
-                      : "bg-gray50"
-                  }`}
-                >
-                  <p
-                    className={`text-lg italic leading-relaxed ${
-                      quote.highlight ? "text-murasaki300" : "text-gray700"
-                    }`}
-                  >
-                    &ldquo;{quote.text}&rdquo;
-                  </p>
-                </blockquote>
-              ))}
+          {/* Quote Card */}
+          <div className="flex flex-col justify-between rounded-2xl border border-gray300/60 bg-white p-8 shadow-lg">
+            <div>
+              <h3 className="mb-6 font-serif text-xl font-semibold text-murasaki200">
+                Palavras que guiam meu trabalho
+              </h3>
+              <blockquote className="rounded-xl bg-shiro100/70 p-6">
+                <p className="font-serif text-lg italic leading-relaxed text-gray700 sm:text-xl">
+                  &ldquo;Uma alimentação saudável precisa ser possível, prazerosa
+                  e sustentável.&rdquo;
+                </p>
+              </blockquote>
             </div>
 
-            <p className="mt-6 text-right text-sm text-gray500">
+            <p className="mt-6 text-right text-base font-medium text-gray500">
               — Rosemary Azuma
             </p>
           </div>
 
           {/* Philosophy Points */}
-          <div className="rounded-2xl bg-white p-8 shadow-xl">
-            <h3 className="mb-6 text-lg font-semibold text-murasaki200">
+          <div className="rounded-2xl border border-gray300/60 bg-white p-8 shadow-lg">
+            <h3 className="mb-6 font-serif text-xl font-semibold text-murasaki200">
               O que você encontra no meu cuidado
             </h3>
 
             <div className="space-y-4">
-              {PHILOSOPHY_POINTS.map((point, index) => {
+              {PHILOSOPHY_POINTS.map((point) => {
                 const Icon = point.icon;
                 return (
                   <div
-                    key={index}
-                    className="group flex items-center gap-4 rounded-xl bg-gray50 p-4 transition-all hover:bg-murasaki100/10"
+                    key={point.text}
+                    className="flex items-center gap-4 rounded-xl bg-gray50 p-4"
                   >
-                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-murasaki100/20 to-midori100/20">
+                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-murasaki100/15">
                       <Icon
                         size={20}
                         weight="fill"
-                        className="text-murasaki200 transition-colors group-hover:text-murasaki300"
+                        className="text-murasaki200"
+                        aria-hidden="true"
                       />
                     </div>
-                    <span className="font-medium text-gray700">
+                    <span className="text-base font-medium text-gray700">
                       {point.text}
                     </span>
                   </div>
@@ -128,17 +104,13 @@ export default function Philosophy() {
 
         {/* Bottom CTA */}
         <div className="mt-12 text-center">
-          <p className="mb-6 text-lg text-gray700">
+          <p className="mb-6 text-base text-gray700 sm:text-lg">
             Pronta para começar sua transformação com leveza e propósito?
           </p>
-          <a
-            href="https://wa.me/819038354891?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20o%20acompanhamento%20nutricional."
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-murasaki200 to-murasaki300 px-8 py-4 font-bold text-white shadow-lg transition-all hover:scale-105 hover:shadow-xl"
-          >
-            🌸 Vamos conversar
-          </a>
+          <WhatsAppButton
+            label={CTA_TEXT}
+            message={WHATSAPP_MESSAGES.metodoSakura}
+          />
         </div>
       </div>
     </section>
